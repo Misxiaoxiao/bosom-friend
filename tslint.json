@@ -14,6 +14,10 @@
     "interface-name": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "no-consecutive-blank-lines": false,
+    "no-empty-interface": true,
+    "await-promise": true,
+    "no-console": true,
+    "no-empty": true
   }
 }
