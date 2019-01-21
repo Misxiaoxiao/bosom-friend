@@ -12,8 +12,8 @@ export default {
   },
   props: {
     height: String,
-  }
-}
+  },
+};
 </script>
 
 <style lang="less" scoped>

@@ -30,8 +30,13 @@
 
 <script>
 export default {
-  
-}
+  props: {
+    height: {
+      type: String,
+      default: '40px',
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>

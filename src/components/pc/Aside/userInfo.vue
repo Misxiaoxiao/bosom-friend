@@ -18,7 +18,7 @@ export default {
     return {
       login: false,
       btn: '立即登录',
-    }
+    };
   },
 };
 </script>

@@ -6,12 +6,16 @@ import store from './store';
 import ElementUI from 'element-ui';
 import './styles/theme.scss';
 
-import axios from './utils/http/index';
+import Utils from './utils/index';
 
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
-Vue.prototype.$http = axios;
+Vue.prototype.$http = Utils.Http;
+
+Object.keys(Utils.Filters).forEach((key) => {
+  Vue.filter(key, Utils.Filters[key]);
+});
 
 new Vue({
   router,
