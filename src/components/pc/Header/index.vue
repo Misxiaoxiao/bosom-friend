@@ -16,13 +16,13 @@
     </div>
     <div class="right">
       <el-button class="no-drag" size="mini" type="text">
-        <i class="btn iconfont icon-sixin"> 私信</i>
+        <i class="btn iconfont icon-sixin"></i>
       </el-button>
       <el-button class="no-drag" size="mini" type="text">
-        <i class="btn iconfont icon-huanfu"> 换肤</i>
+        <i class="btn iconfont icon-huanfu"></i>
       </el-button>
       <el-button class="no-drag" size="mini" type="text">
-        <i class="btn iconfont icon-shezhi"> 设置</i>
+        <i class="btn iconfont icon-shezhi"></i>
       </el-button>
     </div>
   </div>
