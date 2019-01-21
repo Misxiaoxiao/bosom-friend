@@ -2,13 +2,13 @@
   <div class="player">
     <div class="control">
       <el-button type="text">
-        <i>快退</i>
+        <i class="iconfont icon-icon-3"></i>
       </el-button>
       <el-button class="play-btn" type="text">
-        <i>播放</i>
+        <i class="iconfont icon-icon-1"></i>
       </el-button>
       <el-button type="text">
-        <i>快进</i>
+        <i class="iconfont icon-icon-2"></i>
       </el-button>
     </div>
     <div class="cover">
@@ -69,10 +69,10 @@
         <i class="iconfont icon-xihuan"></i>
       </el-button>
       <el-button type="text">
-        <i class="iconfont">列表循环</i>
+        <i class="iconfont icon-icon-6"></i>
       </el-button>
       <el-button type="text">
-        <i class="iconfont">声音</i>
+        <i class="iconfont icon-icon-5"></i>
       </el-button>
       <el-popover
         placement="top-start"
@@ -81,7 +81,7 @@
       >
         <!-- <playlist /> -->
         <el-button type="text" slot="reference">
-          <i class="iconfont">列表</i>
+          <i class="iconfont icon-liebiao"></i>
         </el-button>
       </el-popover>
     </div>
