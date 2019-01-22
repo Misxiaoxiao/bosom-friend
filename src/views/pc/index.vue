@@ -34,6 +34,9 @@ export default {
     PcHeader,
     PcFooter,
   },
+  data() {
+    return {};
+  },
 };
 </script>
 
