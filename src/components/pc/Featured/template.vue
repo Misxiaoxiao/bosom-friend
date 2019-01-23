@@ -31,8 +31,8 @@ export default {
     prev() {},
     // 下一页
     next() {},
-  }
-}
+  },
+};
 </script>
 
 <style lang="less" scoped>

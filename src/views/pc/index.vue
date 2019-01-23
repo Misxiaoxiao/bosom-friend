@@ -2,7 +2,7 @@
   <div>
     <el-container class="container" id="main">
       <el-container style="position: relative">
-        <el-aside width="230px" class="aside">
+        <el-aside width="270px" class="aside">
           <pc-aside />
         </el-aside>
         <el-container>

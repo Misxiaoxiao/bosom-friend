@@ -2,15 +2,16 @@
  * @Description: 封装axios
  * @Author: Missxiao
  * @Date: 2019-01-19 11:45:42
- * @LastEditTime: 2019-01-19 14:06:01
+ * @LastEditTime: 2019-01-23 11:07:27
  * @LastEditors: Please set LastEditors
  */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { Message } from 'element-ui';
+import { baseUrl } from '@/model/index';
 
 const service = axios.create({
   withCredentials: true,
-  baseURL: '',
+  baseURL: baseUrl,
   timeout: 15000, // 请求超时
 });
 

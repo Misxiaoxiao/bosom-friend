@@ -1,15 +1,15 @@
 <template>
   <div class="featured">
-    <featured-slider />
+    <featured-banner />
   </div>
 </template>
 
 <script>
-import FeaturedSlider from './slider.vue';
+import FeaturedBanner from './banner.vue';
 
 export default {
   components: {
-    FeaturedSlider,
+    FeaturedBanner,
   },
 };
 </script>

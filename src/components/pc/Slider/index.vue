@@ -35,24 +35,23 @@ export default {
     },
     pagination: {
       type: Boolean,
-      defualt: true,
+      defualt: false,
     },
     button: {
       type: Boolean,
-      defualt: true,
+      defualt: false,
     },
     scrollBar: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   data() {
     return {
       mySwiper: null,
-    }
+    };
   },
   mounted() {
-    this.init();
     this.resize();
   },
   methods: {
@@ -63,10 +62,11 @@ export default {
         nextButton: this.button ? '.swiper-button-next' : '',
         prevButton: this.button ? '.swiper-button-prev' : '',
         scrollBar: this.scrollBar ? '.swiper-scrollbar' : '',
+      };
+      console.log('init');
+      if (!this.mySwiper) {
+        this.mySwiper = new Swiper('.' + this.myClass, this.options);
       }
-      this.setSize();
-      this.mySwiper = new Swiper('.' + this.myClass, this.options);
-      console.log(this.mySwiper)
     },
     setSize() {
       const sliderDom = document.querySelector('.' + this.myClass);
@@ -77,11 +77,11 @@ export default {
     },
     resize() {
       window.addEventListener('resize', () => {
-        this.init();
-      })
-    }
-  }
-}
+        this.setSize();
+      });
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
