@@ -1,6 +1,6 @@
 <template>
   <div class="slider">
-    <my-slider ref="banner" :options="options" :data="sliderArr" :button="false" :pagination="false">
+    <my-slider ref="banner" :options="options" :data="sliderArr" :button="false" :pagination="true">
       <div
       :slot="index"
       v-for="(slide, index) in sliderArr" :key="index"
@@ -25,10 +25,10 @@ export default {
         effect: 'coverflow',
         initialSlide: 0,
         loop: true,
-        slidesPerView: 1.7,
+        slidesPerView: 1.5,
         resistanceRatio: 0,
         grabCursor: true,
-        loopAdditionalSlides: 8,
+        loopAdditionalSlides: 3,
         centeredSlides: true,
         observer: true,
         observeParents: true,
@@ -40,10 +40,10 @@ export default {
         },
         coverflowEffect: {
           rotate: 0,
-          stretch: 40,
+          stretch: 10,
           depth: 300,
           modifier: 1,
-          slideShadows: false,
+          slideShadows: true,
         },
       },
       sliderArr: [],
@@ -63,7 +63,9 @@ export default {
 
 <style lang="less" scoped>
 .slider {
+  box-sizing: border-box;
   width: 100%;
+  padding: 0 30px;
   height: 20vw;
   margin-top: 15px;
   background: #fff;

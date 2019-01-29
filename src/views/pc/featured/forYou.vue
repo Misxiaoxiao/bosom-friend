@@ -1,5 +1,7 @@
 <template>
-  
+  <div class="for_you">
+    为你推荐
+  </div>
 </template>
 
 <script>
