@@ -50,14 +50,20 @@ export default {
     };
   },
   created() {
-    Utils.Api.banner()
-      .then((res) => {
-        this.sliderArr = res.banners;
-        setTimeout(() => {
-          this.$refs.banner.init();
-        }, 100);
-      });
-  }
+    this.initBanner();
+  },
+  methods: {
+    // 获取banner数据 初始化banner
+    initBanner() {
+      Utils.Api.banner()
+        .then((res) => {
+          this.sliderArr = res.banners;
+          setTimeout(() => {
+            this.$refs.banner.init();
+          }, 100);
+        });
+    },
+  },
 };
 </script>
 

@@ -45,7 +45,7 @@ export default {
     return {
       options: {},
       sliderArr: [],
-    }
+    };
   },
   methods: {
     // 上一页

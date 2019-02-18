@@ -2,7 +2,7 @@
  * @Description: 封装axios
  * @Author: Missxiao
  * @Date: 2019-01-19 11:45:42
- * @LastEditTime: 2019-01-23 11:07:27
+ * @LastEditTime: 2019-02-18 11:45:21
  * @LastEditors: Please set LastEditors
  */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';

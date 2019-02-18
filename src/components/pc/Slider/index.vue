@@ -63,7 +63,6 @@ export default {
         prevButton: this.button ? '.swiper-button-prev' : '',
         scrollBar: this.scrollBar ? '.swiper-scrollbar' : '',
       };
-      console.log('init');
       if (!this.mySwiper) {
         this.mySwiper = new Swiper('.' + this.myClass, this.options);
       }

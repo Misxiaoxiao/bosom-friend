@@ -1,7 +1,7 @@
 <template>
   <div class="featured">
     <featured-banner />
-    <for-you />
+    <hot-recommend />
     <new-music />
     <album-starter />
     <hot-article />
@@ -10,7 +10,7 @@
 
 <script>
 import FeaturedBanner from './banner.vue';
-import ForYou from './forYou.vue';
+import HotRecommend from './hotRecommend.vue';
 import NewMusic from './newMusic.vue';
 import AlbumStarter from './albumStarter.vue';
 import HotArticle from './hotArticle.vue';
@@ -18,7 +18,7 @@ import HotArticle from './hotArticle.vue';
 export default {
   components: {
     FeaturedBanner,
-    ForYou,
+    HotRecommend,
     NewMusic,
     AlbumStarter,
     HotArticle,
@@ -29,5 +29,6 @@ export default {
 <style lang="less" scoped>
 .featured {
   width: 100%;
+  overflow: scroll;
 }
 </style>
