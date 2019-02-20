@@ -3,8 +3,7 @@
     <h4 class="fea_title">热门推荐</h4>
     <div class="content">
       <featured-item-one
-        v-for="(item, index) in list" :key="index"
-        v-if="index < 5"
+        v-for="(item, index) in showList" :key="index"
         :imgSrc="item.picUrl"
         :name="item.name" />
     </div>
@@ -26,6 +25,15 @@ export default {
       list: [],
     };
   },
+  computed: {
+    showList() {
+      return this.list.filter((item, index) => {
+        if (index < 5) {
+          return item;
+        }
+      });
+    },
+  },
   created() {
     this.getPersonalized();
   },
@@ -46,6 +54,7 @@ export default {
 
 .hot_rec {
   padding: 0 30px;
+  background: linear-gradient(#fff, #f5f5f5);
   > .content {
     width: 100%;
     display: flex;

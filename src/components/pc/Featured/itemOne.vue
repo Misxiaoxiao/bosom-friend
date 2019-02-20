@@ -2,6 +2,9 @@
   <div class="item_one">
     <div class="imgs">
       <img :src="imgSrc" alt="">
+      <div class="hover_box">
+        <i class="iconfont icon-icon-1"></i>
+      </div>
     </div>
     <p>{{name}}</p>
     <p v-if="author !== ''">{{author}}</p>
@@ -33,16 +36,43 @@ export default {
 .item_one {
   padding: 3px;
   box-sizing: border-box;
+  cursor: pointer;
   .imgs {
     width: 100%;
+    position: relative;
     > img {
       width: 100%;
       height: 100%;
+    }
+    > .hover_box {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .3);
+      transition: .3s;
+      > i {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 30px;
+        color: #fff;
+        &:hover {
+          color: @--color-primary;
+        }
+      }
     }
   }
   > p {
     font-size: @font-text;
     color: @font-color;
+  }
+  &:hover {
+    .hover_box {
+      opacity: 1;
+    }
   }
 }
 </style>
