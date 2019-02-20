@@ -12,12 +12,12 @@
           <i class="iconfont icon-icon-1"></i>播放全部
         </el-col>
         <el-col :span="4" class="right middle">
-          <div class="btn">上一页</div>
+          <!-- <div class="btn">上一页<i class="iconfont icon-icon-1"></i></div> -->
           <div class="btn">下一页</div>
         </el-col>
       </el-row>
       <div class="container">
-        
+        <div></div>
       </div>
     </div>
   </div>

@@ -69,7 +69,7 @@
         <i class="iconfont icon-xihuan"></i>
       </el-button>
       <el-button type="text">
-        <i class="iconfont icon-icon-6"></i>
+        <i class="iconfont icon-xunhuanbofang01"></i>
       </el-button>
       <el-button type="text">
         <i class="iconfont icon-icon-5"></i>
@@ -81,7 +81,7 @@
       >
         <!-- <playlist /> -->
         <el-button type="text" slot="reference">
-          <i class="iconfont icon-liebiao"></i>
+          <i class="iconfont icon-liebiao1"></i>
         </el-button>
       </el-popover>
     </div>

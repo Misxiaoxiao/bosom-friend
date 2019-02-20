@@ -11,13 +11,11 @@
 </template>
 
 <script>
-import FeaturedTemplate from '@/components/pc/Featured/template.vue';
 import FeaturedItemOne from '@/components/pc/Featured/itemOne.vue';
 import Utils from '@/utils/index';
 
 export default {
   components: {
-    FeaturedTemplate,
     FeaturedItemOne,
   },
   data() {

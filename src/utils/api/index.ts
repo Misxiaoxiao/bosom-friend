@@ -2,7 +2,7 @@
  * @Description: api模块
  * @Author: Misxiao
  * @Date: 2019-01-23 11:04:56
- * @LastEditTime: 2019-02-19 09:46:13
+ * @LastEditTime: 2019-02-20 17:22:19
  * @LastEditors: Please set LastEditors
  */
 import Http from '@/utils/http/index';
@@ -24,6 +24,10 @@ const Api = {
   // 获取每日推荐歌单 (需要登录)
   recommendResource: () => {
     return Http.get('/recommend/resource');
+  },
+  // 推荐电台
+  personalizedDJ: () => {
+    return Http.get('/personalized/djprogram');
   },
 };
 

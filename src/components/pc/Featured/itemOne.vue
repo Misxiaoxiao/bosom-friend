@@ -6,8 +6,8 @@
         <i class="iconfont icon-icon-1"></i>
       </div>
     </div>
-    <p>{{name}}</p>
-    <p v-if="author !== ''">{{author}}</p>
+    <p :class="author !== '' ? 'nowrap' : ''">{{name}}</p>
+    <p v-if="author !== ''" class="author">{{author}}</p>
   </div>
 </template>
 
@@ -68,6 +68,15 @@ export default {
   > p {
     font-size: @font-text;
     color: @font-color;
+    width: 100%;
+    &.nowrap {
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+    &.author {
+      font-size: 12px;
+    }
   }
   &:hover {
     .hover_box {
