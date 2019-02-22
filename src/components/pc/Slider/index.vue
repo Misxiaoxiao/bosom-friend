@@ -79,6 +79,12 @@ export default {
         this.setSize();
       });
     },
+    slidePrev() {
+      this.mySwiper.slidePrev();
+    },
+    slideNext() {
+      this.mySwiper.slideNext();
+    },
   },
 };
 </script>

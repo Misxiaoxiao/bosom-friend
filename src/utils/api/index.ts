@@ -2,7 +2,7 @@
  * @Description: api模块
  * @Author: Misxiao
  * @Date: 2019-01-23 11:04:56
- * @LastEditTime: 2019-02-20 17:22:19
+ * @LastEditTime: 2019-02-22 10:10:34
  * @LastEditors: Please set LastEditors
  */
 import Http from '@/utils/http/index';
@@ -28,6 +28,10 @@ const Api = {
   // 推荐电台
   personalizedDJ: () => {
     return Http.get('/personalized/djprogram');
+  },
+  // 新碟上架
+  topAlbum: (params: apiType.TAlbumParamsType) => {
+    return Http.get(`/top/album?offset=${params.offset}&limit=${params.limit}`);
   },
 };
 
