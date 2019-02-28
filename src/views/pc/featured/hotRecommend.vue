@@ -59,7 +59,6 @@ export default {
     overflow: hidden;
     > div {
       width: 20%;
-      flex: 1;
     }
   }
 }

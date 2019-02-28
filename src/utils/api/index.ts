@@ -2,7 +2,7 @@
  * @Description: api模块
  * @Author: Misxiao
  * @Date: 2019-01-23 11:04:56
- * @LastEditTime: 2019-02-22 10:10:34
+ * @LastEditTime: 2019-02-22 14:05:36
  * @LastEditors: Please set LastEditors
  */
 import Http from '@/utils/http/index';
@@ -30,8 +30,12 @@ const Api = {
     return Http.get('/personalized/djprogram');
   },
   // 新碟上架
-  topAlbum: (params: apiType.TAlbumParamsType) => {
+  topAlbum: (params: apiType.TAParamsType) => {
     return Http.get(`/top/album?offset=${params.offset}&limit=${params.limit}`);
+  },
+  // 热门歌手
+  topArtists: (params: apiType.TAParamsType) => {
+    return Http.get(`/top/artists?offset=${params.offset}&limit=${params.limit}`);
   },
 };
 

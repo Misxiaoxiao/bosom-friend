@@ -4,7 +4,7 @@
     <hot-recommend />
     <new-music />
     <album-starter />
-    <hot-article />
+    <popular-singer />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import FeaturedBanner from './banner.vue';
 import HotRecommend from './hotRecommend.vue';
 import NewMusic from './newMusic.vue';
 import AlbumStarter from './albumStarter.vue';
-import HotArticle from './hotArticle.vue';
+import PopularSinger from './popularSinger.vue';
 
 export default {
   components: {
@@ -21,7 +21,7 @@ export default {
     HotRecommend,
     NewMusic,
     AlbumStarter,
-    HotArticle,
+    PopularSinger,
   },
 };
 </script>

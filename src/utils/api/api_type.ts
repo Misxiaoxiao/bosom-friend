@@ -3,7 +3,7 @@ export interface TPHParamsType {
   limit: number;
 }
 
-export interface TAlbumParamsType {
+export interface TAParamsType {
   offset: number;
   limit: number;
 }

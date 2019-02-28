@@ -12,6 +12,7 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = Utils.Http;
+Vue.prototype.$bus = new Vue();
 
 Object.keys(Utils.Filters).forEach((key) => {
   Vue.filter(key, Utils.Filters[key]);

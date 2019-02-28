@@ -2,7 +2,7 @@
   <div>
     <el-container class="container" id="main">
       <el-container style="position: relative">
-        <el-aside width="270px" class="aside">
+        <el-aside width="225px" class="aside">
           <pc-aside />
         </el-aside>
         <el-container>
@@ -20,6 +20,7 @@
         <pc-footer />
       </el-footer>
     </el-container>
+    <pc-login />
   </div>
 </template>
 
@@ -27,12 +28,14 @@
 import PcAside from '@/components/pc/Aside/index';
 import PcHeader from '@/components/pc/Header/index';
 import PcFooter from '@/components/pc/Footer/index';
+import PcLogin from '@/components/pc/Login/index';
 
 export default {
   components: {
     PcAside,
     PcHeader,
     PcFooter,
+    PcLogin,
   },
   data() {
     return {};

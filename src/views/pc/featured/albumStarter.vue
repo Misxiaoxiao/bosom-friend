@@ -1,7 +1,7 @@
 <template>
   <div class="album_starter">
     <h4 class="fea_title">
-      推荐电台
+      热门专辑
       <div class="btn_box">
         <el-button type="text" :disabled="prev" @click="handlePrev">
           <i class="iconfont icon-shangyiye"></i>
@@ -128,7 +128,6 @@ export default {
     height: auto;
     overflow: hidden;
     .page {
-      border: 1px solid #fff;
       display: flex;
       > div {
         width: 20%;
