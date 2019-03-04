@@ -58,9 +58,7 @@ export default {
     };
   },
   created() {
-    setTimeout(() => {
-      this.initList();
-    }, 100);
+    this.initList();
   },
   methods: {
     initList() {

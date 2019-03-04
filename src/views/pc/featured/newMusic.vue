@@ -3,7 +3,11 @@
     <h4 class="fea_title">
       新歌速递
       <div class="types">
-        <span v-for="(item, index) in types" :key="index">{{item.name}}</span>
+        <span
+        v-for="(item, index) in types" :key="index"
+        :class="item.val === type ? 'active' : ''"
+        @click="changeType(item.val)"
+        >{{item.name}}</span>
       </div>
     </h4>
     <div class="con">
@@ -12,25 +16,110 @@
           <i class="iconfont icon-icon-1"></i>播放全部
         </el-col>
         <el-col :span="4" class="right middle">
-          <!-- <div class="btn">上一页<i class="iconfont icon-icon-1"></i></div> -->
-          <div class="btn">下一页</div>
+          <el-button type="text" :disabled="prev" @click="handlePrev">
+            <i class="iconfont icon-shangyiye"></i>
+          </el-button>
+          <el-button type="text" :disabled="next" @click="handleNext">
+            <i class="iconfont icon-xiayiye"></i>
+          </el-button>
         </el-col>
       </el-row>
       <div class="container">
-        <div></div>
+        <my-slider ref="newMusicList" :myClass="sliderClass" :options="sliderOption" :data="list">
+          <div
+          :slot="index"
+          v-for="(slide, index) in list" :key="index"
+          class="page"
+          >
+            <featured-item-two
+              v-for="(item, index) in slide" :key="index"
+              :imgSrc="item.album.picUrl"
+              :name="item.name"
+              :artists="item.artists"/>
+          </div>
+        </my-slider>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import MySlider from '@/components/pc/Slider/index.vue';
+import FeaturedItemTwo from '@/components/pc/Featured/itemTwo.vue';
+import Utils from '@/utils/index';
+import { dealArray } from '@/utils/common/index';
 import { topSongTypes } from '@/model/index';
 
 export default {
+  components: {
+    MySlider,
+    FeaturedItemTwo,
+  },
   data() {
     return {
       types: topSongTypes,
+      type: topSongTypes[0].val,
+      list: [],
+      // pagination
+      currentPage: 1,
+      totalPage: 5,
+      prev: false,
+      next: false,
+      // slide
+      sliderClass: 'newMusic-slider',
+      sliderOption: {
+        effect: 'slide',
+        loop: false,
+        allowTouchMove: false,
+      },
     };
+  },
+  created() {
+    this.getListData();
+  },
+  methods: {
+    // 获取列表数据
+    getListData() {
+      const params = {
+        type: this.type,
+      };
+      Utils.Api.topSong(params)
+        .then(res => {
+          this.list = dealArray(res.data, 9);
+          setTimeout(() => {
+            this.$refs.newMusicList.init();
+          }, 100);
+          this.dealPagination();
+        });
+    },
+    handlePrev() {
+      this.currentPage -= 1;
+      this.$refs.newMusicList.slidePrev();
+      this.dealPagination();
+    },
+    handleNext() {
+      this.currentPage += 1;
+      this.$refs.newMusicList.slideNext();
+      this.dealPagination();
+    },
+    dealPagination() {
+      // prev
+      if (this.currentPage === 1) {
+        this.prev = true;
+      } else {
+        this.prev = false;
+      }
+      // next
+      if (this.currentPage === this.totalPage) {
+        this.next = true;
+      } else {
+        this.next = false;
+      }
+    },
+    changeType(val) {
+      this.type = val;
+      this.getListData();
+    },
   },
 };
 </script>
@@ -52,6 +141,9 @@ export default {
       &:hover {
         color: @--color-primary;
       }
+      &.active {
+        color: @--color-primary;
+      }
     }
   }
   .con {
@@ -67,6 +159,7 @@ export default {
       font-size: @font-text;
       padding: 0 15px;
       box-sizing: border-box;
+      border-bottom: 1px solid #ebebeb;
       .left {
         height: 100%;
         > i {
@@ -75,9 +168,24 @@ export default {
       }
       .right {
         justify-content: flex-end;
-        .btn {
-          margin: 0 10px;
+        i {
+          font-size: 20px;
         }
+      }
+    }
+  }
+  .container {
+    // display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    .page {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 12px 15px;
+      justify-content: space-around;
+      > div {
+        width: 30%;
       }
     }
   }

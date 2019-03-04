@@ -11,7 +11,7 @@
         <i class="btn iconfont icon-shuaxin"></i>
       </el-button>
       <div class="search no-drag">
-        <el-input size="mini" prefix-icon="el-icon-search" placeholder="搜索音乐、MV、歌单、用户" />
+        <el-input size="mini" prefix-icon="el-icon-search" placeholder="搜索音乐、MV、歌单、用户" clearable/>
       </div>
     </div>
     <div class="right">

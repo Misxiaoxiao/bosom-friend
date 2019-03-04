@@ -1,24 +1,41 @@
 <template>
-  <div class="user-info">
+  <div class="user-info" @click="login">
     <div class="avatar no-drag">
-      <img v-if="login" >
+      <img v-if="isLogin" :src="profile.avatarUrl">
       <img v-else src="@/assets/max.png" >
     </div>
     <div class="mt-5">
       <el-button style="color: #555;" type="text" class="no-drag" size="mini">
-        {{btn}}
+        {{isLogin ? profile.nickname : name}}
       </el-button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
-      login: false,
-      btn: '立即登录',
+      // login: false,
+      name: '立即登录',
     };
+  },
+  computed: {
+    ...mapState({
+      isLogin: state => state.UserModule.isLogin,
+      profile: state => state.UserModule.profile,
+    }),
+  },
+  methods: {
+    login() {
+      if (this.isLogin) {
+
+      } else {
+        this.$bus.$emit('login');
+      }
+    },
   },
 };
 </script>

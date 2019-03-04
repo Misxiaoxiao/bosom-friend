@@ -45,12 +45,15 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import Utils from '@/utils/index';
+
 export default {
   data() {
     return {
       dialogVisible: false,
-      phone: '',
-      password: '',
+      phone: '18142348867',
+      password: '123',
       loading: false,
     };
   },
@@ -65,8 +68,23 @@ export default {
     });
   },
   methods: {
+    ...mapActions([
+      'Login',
+    ]),
     loginClick() {
-
+      this.loading = true;
+      const params = {
+        phone: this.phone,
+        password: this.password,
+      };
+      Utils.Api.LoginCellphone(params)
+        .then(res => {
+        this.loading = false;
+        this.dialogVisible = false;
+        this.Login(res);
+      }).catch(res => {
+        this.loading = false;
+      });
     },
   },
 };

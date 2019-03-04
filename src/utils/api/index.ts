@@ -2,13 +2,17 @@
  * @Description: api模块
  * @Author: Misxiao
  * @Date: 2019-01-23 11:04:56
- * @LastEditTime: 2019-02-22 14:05:36
+ * @LastEditTime: 2019-03-04 18:00:38
  * @LastEditors: Please set LastEditors
  */
 import Http from '@/utils/http/index';
 import * as apiType from './api_type';
 
 const Api = {
+  // 手机登录
+  LoginCellphone: (params: apiType.LoginPType) => {
+    return Http.get(`/login/cellphone?phone=${params.phone}&password=${params.password}`);
+  },
   // banner
   banner: () => {
     return Http.get('/banner');
@@ -16,6 +20,10 @@ const Api = {
   // 获取精品歌单
   topPlaylistHighquality: (params: apiType.TPHParamsType) => {
     return Http.get(`/top/playlist/highquality?cat=${params.cat}&limit=${params.limit}`);
+  },
+  // 新歌速递
+  topSong: (params: apiType.TSParamsType) => {
+    return Http.get(`/top/song?type=${params.type}`);
   },
   // 推荐歌单
   personalized: () => {
