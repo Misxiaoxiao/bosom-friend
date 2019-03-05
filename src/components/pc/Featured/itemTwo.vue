@@ -5,10 +5,10 @@
     </div>
     <div class="con">
       <div class="name">
-        <span>{{name}}</span>
+        <span class="text-ellipsis">{{name}}</span> <i class="SQ" v-if="isSQ">SQ</i> <i class="MV" v-if="hasMV">MV</i>
       </div>
       <div class="artist">
-        <div>
+        <div class="name text-ellipsis">
           <span
           v-for="(artist, index) in artists" :key="index"
           >{{artist.name}}</span>
@@ -39,6 +39,14 @@ export default {
       type: Array,
       default: () => [],
     },
+    isSQ: {
+      type: Boolean,
+      default: false,
+    },
+    hasMV: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -54,7 +62,6 @@ export default {
   > .img {
     width: 45px;
     height: 45px;
-    // float: left;
     img {
       width: 100%;
       height: 100%;
@@ -71,10 +78,29 @@ export default {
     font-size: @font-text;
     color: @font-color;
     .name {
+      display: flex;
+      align-items: center;
       span {
+        max-width: 90px !important;
         cursor: pointer;
+        display: block;
         &:hover {
           color: @--color-primary;
+        }
+      }
+      i {
+        font-family: 'webfont';
+        font-size: 10px;
+        border-radius: 3px;
+        padding: 0 5px;
+        margin-left: 8px;
+        &.SQ {
+          color: #ff9a07;
+          border: 1px solid #ff9a07;
+        }
+        &.MV {
+          color: #30c27c;
+          border: 1px solid #30c27c;
         }
       }
     }
@@ -82,6 +108,9 @@ export default {
       font-size: 12px;
       display: flex;
       justify-content: space-between;
+      .name {
+        max-width: 90px !important;
+      }
       span {
         margin-right: 5px;
         cursor: pointer;

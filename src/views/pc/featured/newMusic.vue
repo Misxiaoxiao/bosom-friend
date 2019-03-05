@@ -35,7 +35,9 @@
               v-for="(item, index) in slide" :key="index"
               :imgSrc="item.album.picUrl"
               :name="item.name"
-              :artists="item.artists"/>
+              :artists="item.artists"
+              :isSQ="true"
+              :hasMV="item.mvid !== 0"/>
           </div>
         </my-slider>
       </div>
@@ -175,7 +177,6 @@ export default {
     }
   }
   .container {
-    // display: flex;
     width: 100%;
     height: auto;
     overflow: hidden;
