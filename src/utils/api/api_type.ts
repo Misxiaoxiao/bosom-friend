@@ -17,3 +17,7 @@ export interface LoginPType {
   password: string;
   countrycode?: number;
 }
+
+export interface MVFParamsType {
+  limit: number;
+}

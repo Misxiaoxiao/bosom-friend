@@ -2,7 +2,7 @@
  * @Description: api模块
  * @Author: Misxiao
  * @Date: 2019-01-23 11:04:56
- * @LastEditTime: 2019-03-04 18:00:38
+ * @LastEditTime: 2019-03-05 18:16:42
  * @LastEditors: Please set LastEditors
  */
 import Http from '@/utils/http/index';
@@ -44,6 +44,18 @@ const Api = {
   // 热门歌手
   topArtists: (params: apiType.TAParamsType) => {
     return Http.get(`/top/artists?offset=${params.offset}&limit=${params.limit}`);
+  },
+  // 最新mv
+  mvFirst: (params: apiType.MVFParamsType) => {
+    return Http.get(`/mv/first?limit=${params.limit}`);
+  },
+  // 推荐mv
+  mvpersonalized: () => {
+    return Http.get('/personalized/mv');
+  },
+  // mv排行
+  mvTop: (params: apiType.MVFParamsType) => {
+    return Http.get(`top/mv?limit=${params.limit}`);
   },
 };
 

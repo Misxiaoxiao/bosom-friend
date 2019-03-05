@@ -52,8 +52,8 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      phone: '18142348867',
-      password: '123',
+      phone: '',
+      password: '',
       loading: false,
     };
   },

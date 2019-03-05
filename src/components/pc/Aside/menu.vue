@@ -2,17 +2,17 @@
   <el-scrollbar class="menu-view scroll-page">
     <div class="menu-group">
       <div class="menu-title">在线音乐</div>
-      <div class="menu-item active">
+      <div :class="'menu-item' + (currentRoute === 'featured' ? ' active' : '')" @click="linkFeatured">
         <div class="left">
           <i class="iconfont icon-icon-"></i>音乐馆
         </div>
       </div>
-      <div class="menu-item">
+      <div :class="'menu-item' + (currentRoute === 'MV' ? ' active' : '')" @click="linkMV">
         <div class="left">
           <i class="iconfont icon-shipin"></i>MV
         </div>
       </div>
-      <div class="menu-item">
+      <div :class="'menu-item' + (currentRoute === 'radio' ? ' active' : '')" @click="linkRadio">
         <div class="left">
           <i class="iconfont icon-dianbo01"></i>个性电台
         </div>
@@ -72,6 +72,36 @@
 
 <script>
 export default {
+  data() {
+    return {
+      currentRoute: 'featured',
+    };
+  },
+  watch: {
+    $route(r) {
+      this.currentRoute = r.name;
+    },
+  },
+  created() {
+    this.currentRoute = this.$route.name;
+  },
+  methods: {
+    linkFeatured() {
+      this.$router.push({
+        name: 'featured',
+      });
+    },
+    linkMV() {
+      this.$router.push({
+        name: 'MV',
+      });
+    },
+    linkRadio() {
+      this.$router.push({
+        name: 'radio',
+      });
+    },
+  },
 };
 </script>
 
