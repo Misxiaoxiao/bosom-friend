@@ -2,7 +2,7 @@
  * @Description: api模块
  * @Author: Misxiao
  * @Date: 2019-01-23 11:04:56
- * @LastEditTime: 2019-03-05 18:16:42
+ * @LastEditTime: 2019-03-06 15:09:56
  * @LastEditors: Please set LastEditors
  */
 import Http from '@/utils/http/index';
@@ -50,7 +50,7 @@ const Api = {
     return Http.get(`/mv/first?limit=${params.limit}`);
   },
   // 推荐mv
-  mvpersonalized: () => {
+  mvPersonalized: () => {
     return Http.get('/personalized/mv');
   },
   // mv排行
