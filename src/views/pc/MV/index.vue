@@ -2,13 +2,13 @@
   <div class="mv">
     <div class="tag">
       <div>
-        <i></i>榜单
+        <i class="iconfont icon-bangdan"></i>榜单
       </div>
       <div>
-        <i></i>现场
+        <i class="iconfont icon-live"></i>现场
       </div>
       <div>
-        <i></i>频道
+        <i class="iconfont icon-qianmoicon84"></i>频道
       </div>
     </div>
     <mv-new />
@@ -50,6 +50,15 @@ export default {
       line-height: 65px;
       background-color: #f5f5f5;
       font-size: @font-title;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 65px;
+      > i {
+        font-size: 20px;
+        margin: 0 8px;
+        color: @--color-primary;
+      }
     }
   }
 }

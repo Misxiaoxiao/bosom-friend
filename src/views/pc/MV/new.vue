@@ -106,6 +106,7 @@ export default {
 <style lang="less" scoped>
 .new {
   padding: 0 30px;
+  background: linear-gradient(#f6f6f6, #ffff);
   > h4 {
     display: flex;
     justify-content: space-between;
